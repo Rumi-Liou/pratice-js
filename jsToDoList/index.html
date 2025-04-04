@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Todo List</h2>
+        <div class="inputField">
+            <div class="inputTitle">
+                <label>任務</label>
+                <input type="text" id="taskName" placeholder="請輸入你的任務名稱">
+            </div>
+            <div class="inputTitle">
+                <label>日期</label>
+                <input type="date" id="taskDate">
+            </div>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        
+        <ul class="todoList" id="taskList"></ul>
+
+        <!-- 編輯任務視窗 -->
+        <div class="modal disNone" id="editModal">
+            <div class="modalBox">
+                <h3>編輯任務</h3>
+                <div class="inputTitle">
+                    <label>任務</label>
+                    <input type="text" id="editTaskName" placeholder="請輸入你的任務名稱">
+                </div>
+                <div class="inputTitle">
+                    <label>日期</label>
+                    <input type="date" id="editTaskDate">
+                </div>
+                <div class="buttons">
+                    <button class="cancel" onclick="closeModal('editModal')">取消</button>
+                    <button class="confirm" onclick="updateTask()">確認</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 確認刪除視窗 -->
+        <div class="modal disNone" id="deleteModal">
+            <div class="modalBox">
+                <h3>是否要刪除任務</h3>
+                <div class="buttons">
+                    <button class="cancel" onclick="closeModal('deleteModal')">取消</button>
+                    <button class="confirm" onclick="confirmDelete()">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/todolist.js"></script>
+</body>
+</html>
